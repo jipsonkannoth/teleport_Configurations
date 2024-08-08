@@ -1,0 +1,45 @@
+kind: role
+metadata:
+  description: Consolidated access to manage and review nodes
+  id: 1713523228739390778
+  labels:
+    teleport.internal/resource-type: preset
+  name: shell
+  revision: 412cb197-4092-4a62-8e21-44ef353500ad
+spec:
+  allow:
+    logins:
+    - ubuntu
+    - ec2-user
+    node_labels:
+      teleport.internal/resource-id: 4e10fb6a-f2e5-40c4-b34e-454b43fac72e
+    rules:
+    - resources:
+      - node
+      verbs:
+      - list
+      - read
+      - create
+      - update
+      - delete
+  deny: {}
+  options:
+    cert_format: standard
+    create_db_user: false
+    create_desktop_user: false
+    desktop_clipboard: true
+    desktop_directory_sharing: true
+    enhanced_recording:
+    - command
+    - network
+    forward_agent: false
+    idp:
+      saml:
+        enabled: true
+    max_session_ttl: 30h0m0s
+    pin_source_ip: false
+    port_forwarding: false
+    record_session:
+      desktop: false
+    ssh_file_copy: true
+version: v7
